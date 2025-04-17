@@ -15,8 +15,8 @@ public:
         cin>>w;
         a= l*w;
         p= 2*(l+w);
-        cout<<"A"<<a;
-        cout<<"P"<<p;
+        cout<<"Area: "<<a<<endl;
+        cout<<"Perimeter: "<<p;
     }
     void UpdateData(){
         cout<<"Enter The Updated Length :";
@@ -25,21 +25,22 @@ public:
         cin>>w;
         a= l*w;
         p= 2*(l+w);
-        cout<<"A"<<a;
-        cout<<"P"<<p;
+        cout<<"Area"<<a<<endl;
+        cout<<"Perimeter"<<p;
     }
 
-    void DisplayData();
-        cout<<"The length of the plot is :"<<l;
-        cout<<"The width of the plot is :"<<w;
-        cout<<"Area :"<<a;
+    void DisplayData(){
+        cout<<"The length of the plot is :"<<l<<endl;
+        cout<<"The width of the plot is :"<<w<<endl;
+        cout<<"Area :"<<a<<endl;
         cout<<"Perimeter :"<<p;
+    }
 };
 
 int main(){
     int ch,c=0,pn;
     PlotData P[25];
-    next : cout<<"Enter 1 to Add ; 2 to Update ; 3 to Display ; Else to Exit";
+    next : cout<<"\nEnter 1 to Add ; 2 to Update ; 3 to Display ; Else to Exit";
     cin>>ch;
     switch (ch)
     {

@@ -43,7 +43,7 @@ public:
     }
 
     void DisplayItemDetails() {
-        cout << "Item's details:" << endl;
+        cout << "\nItem's details:" << endl;
         cout << "ID: " << itemid << endl;
         cout << "Name: " << itemname << endl;
         cout << "Price: " << price << endl;
@@ -52,7 +52,7 @@ public:
 };
 
 int main() {
-    class Inventory items[100];
+    Inventory items[100];
     int numitems = 0;
     int itemfind, choice;
 
@@ -60,23 +60,22 @@ int main() {
     cout << "Enter 2 to increase quantity." << endl;
     cout << "Enter 3 to decrease quantity." << endl;
     cout << "Enter 4 to display item's details." << endl;
-    cout << "Else to Exit." << endl;
+    cout << "Enter 0 to exit." << endl;
     cout << "==================================" << endl;
 
     while (true) {
-        cout << "Enter the option which you want: ";
+        cout << "\nEnter the option which you want: ";
         cin >> choice;
 
         bool found = false;
 
         switch (choice) {
-        case 1: {
+        case 1:
             items[numitems].AddItemDetails();
             numitems++;
             break;
-        }
 
-        case 2: {
+        case 2:
             cout << "Enter item ID: ";
             cin >> itemfind;
             for (int i = 0; i < numitems; i++) {
@@ -86,13 +85,10 @@ int main() {
                     break;
                 }
             }
-            if (!found) {
-                cout << "Item not found!" << endl;
-            }
+            if (!found) cout << "Item not found!" << endl;
             break;
-        }
 
-        case 3: {
+        case 3:
             cout << "Enter item ID: ";
             cin >> itemfind;
             for (int i = 0; i < numitems; i++) {
@@ -102,13 +98,10 @@ int main() {
                     break;
                 }
             }
-            if (!found) {
-                cout << "Item not found!" << endl;
-            }
+            if (!found) cout << "Item not found!" << endl;
             break;
-        }
 
-        case 4: {
+        case 4:
             cout << "Enter item ID: ";
             cin >> itemfind;
             for (int i = 0; i < numitems; i++) {
@@ -118,13 +111,15 @@ int main() {
                     break;
                 }
             }
-            if (!found) {
-                cout << "Item not found!" << endl;
-            }
+            if (!found) cout << "Item not found!" << endl;
             break;
-        }
 
-        
+        case 0:
+            cout << "Exiting program..." << endl;
+            return 0;
+
+        default:
+            cout << "Invalid choice!" << endl;
         }
     }
 }

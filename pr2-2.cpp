@@ -27,6 +27,7 @@ public:
         marks1 = m1;
         marks2 = m2;
         marks3 = m3;
+        CalculateAverage();
     }
 
     void AddStudentDetails() {
@@ -45,7 +46,7 @@ public:
     }
 
     void DisplayStudentDetails() {
-        cout << "Student's Details:" << endl;
+        cout << "\nStudent's Details:" << endl;
         cout << "Roll number: " << rollnum << endl;
         cout << "Name: " << name << endl;
         cout << "Marks of Subject 1: " << marks1 << endl;
@@ -60,17 +61,17 @@ public:
 };
 
 int main() {
-    class Student S[100];
+    Student S[100];
     int num_stu = 0;
     int choice, stu_find;
 
     cout << "Enter 1 to Add Student's Details." << endl;
     cout << "Enter 2 to Display Student's Details." << endl;
-    cout << "Else to Exit." << endl;
+    cout << "Enter 0 to Exit." << endl;
     cout << "=====================================" << endl;
 
 next:
-    cout << "Enter Your Choice Which You Want: ";
+    cout << "\nEnter Your Choice Which You Want: ";
     cin >> choice;
 
     switch (choice) {
@@ -100,6 +101,15 @@ next:
 
         break;
     }
+
+    case 0: {
+        cout << "Exiting Program..." << endl;
+        return 0;
     }
+
+    default:
+        cout << "Invalid Choice!" << endl;
+    }
+
     goto next;
 }
